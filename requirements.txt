@@ -2,3 +2,4 @@ asyncio
 aiohttp
 aiofiles
 atproto
+pytz
