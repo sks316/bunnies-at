@@ -24,12 +24,6 @@ async def main():
         async with session.get(image) as mp4:
             assert mp4.status == 200
             data = await mp4.read()
-    # Save video to disk - This may not be needed (TODO)
-    async with aiofiles.open("bunny.mp4", "wb") as outfile:
-        await outfile.write(data)
-    # Read video from disk - This may not be needed (TODO)
-    async with aiofiles.open('bunny.mp4', mode='rb') as v:
-        videofile = await v.read()
     # Build post text with client_utils TextBuilder
     tb = client_utils.TextBuilder()
     tb.text(f"🔢 ID: {id}\n\n👀 This bunny has been seen {seen} times.\n\n🐰 {total} total bunnies served.\n\n")
@@ -51,7 +45,7 @@ async def main():
     # Set timezone - Change this to fit your timezone
     tz = pytz.timezone("America/Chicago")
     # Post to Bluesky
-    post = client.send_video(tb,videofile,"A cute bunny from bunnies.io")
+    post = client.send_video(tb,data,"A cute bunny from bunnies.io")
     # Get current time and localize to timezone specified earlier
     now = datetime.datetime.now()
     posttime = tz.localize(now)
