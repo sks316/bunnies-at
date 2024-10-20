@@ -23,7 +23,7 @@ async def main():
         # Download video from Bluesky - as Bluesky does not yet support user GIFs, we use MP4 instead.
         async with session.get(image) as mp4:
             assert mp4.status == 200
-            data = await mp4.read()
+            videofile = await mp4.read()
     # Build post text with client_utils TextBuilder
     tb = client_utils.TextBuilder()
     tb.text(f"🔢 ID: {id}\n\n👀 This bunny has been seen {seen} times.\n\n🐰 {total} total bunnies served.\n\n")
@@ -45,7 +45,7 @@ async def main():
     # Set timezone - Change this to fit your timezone
     tz = pytz.timezone("America/Chicago")
     # Post to Bluesky
-    post = client.send_video(tb,data,"A cute bunny from bunnies.io")
+    post = client.send_video(tb,videofile,"A cute bunny from bunnies.io")
     # Get current time and localize to timezone specified earlier
     now = datetime.datetime.now()
     posttime = tz.localize(now)
