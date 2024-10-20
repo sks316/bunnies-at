@@ -54,7 +54,7 @@ async def main():
         # Print to terminal with time sent
         print("sent bunny! " + posttime.strftime(format))
         # Sleep for one hour - task will restart after sleep ends
-        await asyncio.sleep(5)
+        await asyncio.sleep(3600)
 
 # Run forever via async task
 loop = asyncio.get_event_loop()
