@@ -1,6 +1,6 @@
-# bunnies-ap
+# bunnies-at
 
-[![love-badge][]][love] [![ap-badge][]][ap]
+[![love-badge][]][love] [![at-badge][]][at]
 
 [![follow-badge][]][follow]
 
@@ -27,8 +27,8 @@ Replace `YOUR-USERNAME-HERE` with your account's username. Now go to the App Pas
 [love]: https://lillie2523.carrd.co
 [love-badge]: https://custom-icon-badges.herokuapp.com/badge/-Made%20with%20love...-555555?style=for-the-badge&logo=heart
 
-[ap]: https://docs.bsky.app/
-[ap-badge]: https://custom-icon-badges.herokuapp.com/badge/-...and%20ATProto-555555?style=for-the-badge&logo=atproto
+[at]: https://docs.bsky.app/
+[at-badge]: https://custom-icon-badges.herokuapp.com/badge/-...and%20ATProto-555555?style=for-the-badge&logo=atproto
 
 [follow]: https://bsky.app/profile/bunniesio.bsky.social
 [follow-badge]: https://custom-icon-badges.herokuapp.com/badge/-follow%20%40bunniesio.bsky.social-555555?style=for-the-badge&logo=bluesky
