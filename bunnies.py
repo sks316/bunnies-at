@@ -8,9 +8,6 @@ import pytz
 from atproto import Client, client_utils
 
 async def main():
-    # Login to Bluesky
-    client = Client()
-    client.login(config.username, config.password)
     async with aiohttp.ClientSession() as session:
         # Get info from bunnies.io
         async with session.get('https://api.bunnies.io/v2/loop/random/?media=gif,png,mp4') as bunny:
@@ -54,6 +51,10 @@ async def main():
     print("sent bunny! " + posttime.strftime(format))
     # Sleep for one hour - task will restart after sleep ends
     await asyncio.sleep(3600)
+
+# Login to Bluesky
+client = Client()
+client.login(config.username, config.password)
 
 # Run forever via async task
 loop = asyncio.get_event_loop()
